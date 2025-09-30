@@ -1,0 +1,14 @@
+format: jb-book
+root: intro
+chapters:
+  - file: Chapter1/index
+    title: "Python Basics"
+    sections:
+      - file: Chapter1/01-Variables
+        title: "Variables"
+      - file: Chapter1/02-DataTypes
+        title: "Data Types, Type Casting & mathematical Operations in Python"
+      - file: Chapter1/03-String_Manipulation
+        title: "String Manipulation"
+      - file: Chapter1/04-Lists
+        title: "List Manipulation"
