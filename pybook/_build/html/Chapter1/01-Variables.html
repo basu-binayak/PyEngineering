@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter1/01-Variables';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Data Types, Type Casting and Mathematical Operations" href="02-DataTypes.html" />
+    <link rel="prev" title="Python Basics" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -173,7 +173,16 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-DataTypes.html">Introduction to Data Types, Type Casting &amp; Mathematical Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Strings.html">Introduction to String Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-Lists.html">List Manipulation</a></li>
+</ul>
+</details></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -384,10 +393,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-print-in-python">A. Print in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-string-manipulation">B. String Manipulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-input-function-in-python">C. Input function in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-variables-in-python">D. Variables in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-python">Variables in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-in-python">Print in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-n-in-printing">Using <code class="docutils literal notranslate"><span class="pre">\n</span></code> in printing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-function-in-python">Input function in Python</a></li>
 </ul>
             </nav>
         </div>
@@ -401,23 +413,44 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-variables-in-python-to-manage-data">
 <h1>Working with variables in Python to manage data<a class="headerlink" href="#working-with-variables-in-python-to-manage-data" title="Link to this heading">#</a></h1>
-<section id="a-print-in-python">
-<h2>A. Print in Python<a class="headerlink" href="#a-print-in-python" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="variables-in-python">
+<h2>Variables in Python<a class="headerlink" href="#variables-in-python" title="Link to this heading">#</a></h2>
+<p>A <strong>variable</strong> in Python is like a container that stores data.<br />
+Instead of remembering values directly, we give them names so we can reuse and manipulate them easily.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+</pre></div>
+</div>
+<p>Here:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> stores an integer (<code class="docutils literal notranslate"><span class="pre">10</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> stores a string (<code class="docutils literal notranslate"><span class="pre">&quot;Alice&quot;</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> stores a floating-point number (<code class="docutils literal notranslate"><span class="pre">3.14</span></code>)</p></li>
+</ul>
+<p>Variables make programs <strong>flexible, reusable, and readable</strong> because we can work with names instead of hardcoding values.</p>
+</section>
+<hr class="docutils" />
+<section id="print-in-python">
+<h2>Print in Python<a class="headerlink" href="#print-in-python" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hey! I have started to learn Python.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let me store my name in a variable named my_name &amp; print it  </span>
+<span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Binayak Basu&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hey! I have started to learn Python.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Binayak Basu
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="b-string-manipulation">
-<h2>B. String Manipulation<a class="headerlink" href="#b-string-manipulation" title="Link to this heading">#</a></h2>
+<section id="using-n-in-printing">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">\n</span></code> in printing<a class="headerlink" href="#using-n-in-printing" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using \n to go to a new line </span>
@@ -433,6 +466,10 @@ Mangoes are the most delicious among fruits
 </div>
 </div>
 </div>
+</section>
+<section id="f-strings">
+<h3>f strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h3>
+<p><strong>f-strings</strong> (formatted string literals) provide a concise and readable way to embed variables or expressions directly inside strings using <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Introduced in Python 3.6, they make string formatting simpler and faster compared to older methods.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenate two strings </span>
@@ -454,8 +491,10 @@ Hello! Binayak Basu
 </div>
 </div>
 </section>
-<section id="c-input-function-in-python">
-<h2>C. Input function in Python<a class="headerlink" href="#c-input-function-in-python" title="Link to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="input-function-in-python">
+<h2>Input function in Python<a class="headerlink" href="#input-function-in-python" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># take the name as input and print it</span>
@@ -470,24 +509,28 @@ Hello! Binayak Basu
 </div>
 </div>
 </div>
-</section>
-<section id="d-variables-in-python">
-<h2>D. Variables in Python<a class="headerlink" href="#d-variables-in-python" title="Link to this heading">#</a></h2>
+<p><strong>NOTE</strong></p>
+<ul class="simple">
+<li><p>The input that we take is always a string!</p></li>
+</ul>
+<p><em>(Let us see this with an example! - this will become more clear when we cover the data types)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># variables store values </span>
-<span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Binayak&#39;</span> <span class="c1"># my_name is the vaiable that stores the data </span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hey! My name is </span><span class="si">{</span><span class="n">my_name</span><span class="si">}</span><span class="s2">. I am starting to learn Python.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let us take age as an input </span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Your age is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The input is of type : </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hey! My name is Binayak. I am starting to learn Python. 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your age is 30
+The input is of type : &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -521,6 +564,24 @@ Hello! Binayak Basu
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Basics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-DataTypes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Data Types, Type Casting and Mathematical Operations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -537,10 +598,13 @@ Hello! Binayak Basu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-print-in-python">A. Print in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-string-manipulation">B. String Manipulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-input-function-in-python">C. Input function in Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-variables-in-python">D. Variables in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-python">Variables in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-in-python">Print in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-n-in-printing">Using <code class="docutils literal notranslate"><span class="pre">\n</span></code> in printing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-function-in-python">Input function in Python</a></li>
 </ul>
   </nav></div>
 
